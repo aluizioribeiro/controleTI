@@ -5,7 +5,6 @@
  */
 package servlets;
 
-import controle.LocalImpl;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -13,7 +12,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import modelo.Local;
 
 /**
  *
@@ -74,14 +72,7 @@ public class CadastrarLocal extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String nome = request.getParameter("local");
-        LocalImpl localImpl = new LocalImpl();
-        Local l = new Local();
-        l.setNome(nome);
-        
-        localImpl.salvar(l);
-        
-        response.sendRedirect("cadastrarlocal.jsp");
+        processRequest(request, response);
     }
 
     /**

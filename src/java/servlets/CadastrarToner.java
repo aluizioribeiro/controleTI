@@ -5,8 +5,6 @@
  */
 package servlets;
 
-import controle.TonerImpl;
-import controle.LocalImpl;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -14,7 +12,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import modelo.Toner;
 
 /**
  *
@@ -75,26 +72,7 @@ public class CadastrarToner extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //recupera as informações da pagina cadastrarcidade.jsp
-        int idLocal = Integer.valueOf(request.getParameter("local"));
-        String nomeToner = request.getParameter("toner");
-        
-        //cria o objeto para manipular e salvar no banco
-        TonerImpl tonerImpl = new TonerImpl();
-        
-        //popula o objeto cidade
-        Toner t = new Toner();
-        t.setNome(nomeToner);
-        
-        //relaciona cidade com estado
-        t.getLocal().setId(idLocal);
-        
-        //salva no banco
-        tonerImpl.salvar(t);
-        
-        //retorna para tela de cadastro
-        response.sendRedirect("cadastrartoner.jsp");
-        
+        processRequest(request, response);
     }
 
     /**
