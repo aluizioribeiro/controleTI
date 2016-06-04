@@ -5,8 +5,6 @@ package dao;
 import controle.ImpressoraImpl;
 import java.util.List;
 import java.util.Scanner;
-
-import modelo.Impressora;
 import modelo.Impressora;
 
 public class Main {
