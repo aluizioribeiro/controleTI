@@ -54,9 +54,9 @@ public class Main {
 	}
 
 	private static void out(List<Impressora> list) {
-		for (Impressora impressora : list) {
-			System.out.println(impressora.getId()+"\t"+f(impressora.getMarca())+"\t"+impressora.getMarca()+"\t"+impressora.getLocal());
-		}
+            list.stream().forEach((impressora) -> {
+                System.out.println(impressora.getId()+"\t"+f(impressora.getMarca())+"\t"+impressora.getMarca()+"\t"+impressora.getLocal());
+            });
 		
 	}
 

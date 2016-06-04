@@ -24,13 +24,13 @@
                 List<Local> list = localImpl.getListAll();
             %>
             
-            Estado:
+            Local:
             <select name="local">
                 <% for (Local e : list){ %>
                 <option value="<%=e.getId()%>"><%=e.getNome()%></option>
                 <%}%>
             </select><br>
-            Cidade:<input type="text" name="toner"/><br>
+            Toner:<input type="text" name="toner"/><br>
             <input type="submit" value="Adcionar Toner"/>
         </form>
     </body>
