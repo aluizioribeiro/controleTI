@@ -19,7 +19,7 @@ import modelo.Local;
  *
  * @author TI-01
  */
-@WebServlet(name = "CadastrarLocal", urlPatterns = {"/cadastrarLocal"})
+@WebServlet(name = "CadastrarLocal", urlPatterns = {"/cadastrarlocal"})
 public class CadastrarLocal extends HttpServlet {
 
     /**

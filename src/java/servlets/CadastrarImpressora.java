@@ -19,7 +19,7 @@ import modelo.Impressora;
  *
  * @author TI-01
  */
-@WebServlet(name = "CadastrarImpressora", urlPatterns = {"/cadastrarImpressora"})
+@WebServlet(name = "CadastrarImpressora", urlPatterns = {"/cadastrarimpressora"})
 public class CadastrarImpressora extends HttpServlet {
 
     /**
@@ -80,7 +80,7 @@ public class CadastrarImpressora extends HttpServlet {
         impressora.setMarca(request.getParameter("marca"));
         impressora.setModelo(request.getParameter("modelo"));
         impressora.setLocal(request.getParameter("local"));
-        ImpressoraImpl contatoDao = new ImpressoraImpl();//cria o objeto ImpressoraDao
+        ImpressoraImpl contatoDao = new ImpressoraImpl();
         
         //salva
         contatoDao.salvar(impressora);
